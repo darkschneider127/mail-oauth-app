@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: google-mail-oauth
+    env: node
+    rootDir: server
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OAUTH_CALLBACK_BASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_SCOPE
+        value: https://www.googleapis.com/auth/gmail.readonly
